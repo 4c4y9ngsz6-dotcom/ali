@@ -1429,7 +1429,7 @@ body {
     color: var(--primary);
 }
 
-/* WhatsApp Float Button */
+/* Floating Buttons */
 .whatsapp-float {
     position: fixed;
     left: 30px;
@@ -1446,43 +1446,34 @@ body {
     z-index: 999;
     transition: var(--transition);
     text-decoration: none;
-}
-
-.whatsapp-float-1 {
-    bottom: 30px;
-}
-
-.whatsapp-float-2 {
-    bottom: 100px;
+    animation: floatPulse 2s infinite;
 }
 
 .whatsapp-float:hover {
     transform: scale(1.1);
     background: #20bd5a;
-}
-
-/* Call Float Button */
-.call-float-btn {
-    bottom: 170px;
-    background: var(--primary); /* Blue color for phone */
-    animation: phonePulse 2s infinite;
-}
-
-.call-float-btn:hover {
-    transform: scale(1.1);
-    background: var(--primary-dark);
     animation: none;
 }
 
-@keyframes phonePulse {
+/* Whatsapp Position */
+.whatsapp-float-1 {
+    bottom: 30px;
+}
+
+/* Call Position */
+.call-float-btn {
+    bottom: 100px;
+}
+
+@keyframes floatPulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.7);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
     }
     70% {
-        box-shadow: 0 0 0 15px rgba(0, 180, 216, 0);
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(0, 180, 216, 0);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
     }
 }
 
@@ -1581,12 +1572,8 @@ body {
         bottom: 20px;
     }
 
-    .whatsapp-float-2 {
-        bottom: 80px;
-    }
-
     .call-float-btn {
-        bottom: 140px;
+        bottom: 80px;
     }
 }
 
