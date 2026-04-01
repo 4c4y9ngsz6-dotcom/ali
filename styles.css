@@ -1149,6 +1149,15 @@ body {
 
 .form-group {
     margin-bottom: 20px;
+    min-height: 105px; /* Uniform height for all fields */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.booking-form .form-group:nth-child(5),
+.booking-form .form-group:nth-child(6) {
+    min-height: 110px; /* Extra space for longer labels */
 }
 
 .form-group label {
@@ -1159,6 +1168,8 @@ body {
     color: var(--darker);
     margin-bottom: 8px;
     font-size: 14px;
+    min-height: 22px; /* Fixed label height */
+    flex-shrink: 0;
 }
 
 .form-group label i {
@@ -1176,6 +1187,8 @@ body {
     font-size: 15px;
     background: var(--white);
     transition: var(--transition);
+    flex-grow: 1; /* Fill remaining space */
+    min-height: 50px; /* Consistent input height */
 }
 
 .form-group input:focus,
