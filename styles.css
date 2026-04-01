@@ -27,6 +27,31 @@
     --transition: all 0.3s ease;
 }
 
+/* Dark Mode Theme */
+html.dark-mode {
+    --dark: #f8f9fa;
+    --darker: #ffffff;
+    --light: #15202b;
+    --white: #1e2732;
+    --gray: #adb5bd;
+    --gray-light: #6c757d;
+    --shadow: 0 4px 20px rgba(0,0,0,0.4);
+    --shadow-lg: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* Exceptions: Elements that should always keep their original color mapping */
+html.dark-mode .header,
+html.dark-mode .hero,
+html.dark-mode .footer,
+html.dark-mode .btn-phone,
+html.dark-mode .social-link,
+html.dark-mode .booking-form {
+    --dark: #1a2634;
+    --darker: #0d1b2a;
+    --light: #f8f9fa;
+    --white: #ffffff;
+}
+
 body {
     font-family: 'Cairo', sans-serif;
     background: var(--light);
@@ -110,31 +135,36 @@ body {
     gap: 12px;
 }
 
-.lang-dropdown {
-    position: relative;
-    display: inline-block;
+.header-controls-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
 }
 
-.btn-lang {
-    background: rgba(0, 180, 216, 0.1);
-    color: var(--primary);
-    border: 2px solid var(--primary);
+.btn-control {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     width: 44px;
     height: 44px;
-    padding: 0;
     border-radius: 50%;
     cursor: pointer;
-    transition: var(--transition);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 22px;
+    transition: var(--transition);
 }
 
-.btn-lang:hover {
-    background: rgba(0, 180, 216, 0.1);
-    color: var(--primary);
-    border-color: var(--primary);
+.btn-control:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
 }
 
 .lang-menu {
@@ -1187,10 +1217,13 @@ html[dir="ltr"] .lang-menu {
 }
 
 .booking-form {
-    background: var(--light);
+    background: rgba(0, 180, 216, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 40px;
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(0, 180, 216, 0.15);
 }
 
 .booking-form h3 {
@@ -1560,8 +1593,14 @@ html[dir="ltr"] .lang-menu {
 
 @media (max-width: 768px) {
     .nav-menu,
-    .header-actions {
+    .header-actions .btn-phone {
         display: none;
+    }
+
+    .header-actions {
+        display: flex;
+        margin-inline-start: auto;
+        margin-inline-end: 15px;
     }
     
     .mobile-menu-btn {

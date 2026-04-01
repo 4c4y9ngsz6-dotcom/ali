@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initMobileMenu();
     initAnimations();
+    initTheme();
 });
 
 // Navigation Active State
@@ -410,4 +411,40 @@ document.addEventListener('DOMContentLoaded', function() {
 // Call lazy loading
 lazyLoadImages();
 
+// Dark Mode Theme Logic
+function toggleTheme() {
+    const htmlEl = document.documentElement;
+    const isDark = htmlEl.classList.contains('dark-mode');
+    
+    if (isDark) {
+        htmlEl.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+    } else {
+        htmlEl.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+    }
+    updateThemeIcon();
+}
+
+function updateThemeIcon() {
+    const btnTheme = document.getElementById('theme-toggle');
+    if (!btnTheme) return;
+    
+    const isDark = document.documentElement.classList.contains('dark-mode');
+    
+    if (isDark) {
+        btnTheme.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+        btnTheme.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+}
+
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    // Check local storage or default to light mode
+    if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+    }
+    updateThemeIcon();
+}
 
