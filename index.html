@@ -25,6 +25,15 @@
                 <a href="#contact">اتصل بنا</a>
             </nav>
             <div class="header-actions">
+                <div class="lang-dropdown">
+                    <button id="lang-btn" class="btn-lang" onclick="toggleDropdown(event)" title="تغيير اللغة">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <div class="lang-menu" id="lang-menu">
+                        <a href="#" onclick="switchLang('ar', event)">العربية</a>
+                        <a href="#" onclick="switchLang('en', event)">English</a>
+                    </div>
+                </div>
                 <a href="tel:07716515909" class="btn-phone">
                     <i class="fas fa-phone"></i>
                     <span>اتصل الآن - Ali</span>
@@ -690,6 +699,7 @@
         <i class="fas fa-phone-alt"></i>
     </a>
 
+    <script src="i18n.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

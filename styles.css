@@ -110,6 +110,72 @@ body {
     gap: 12px;
 }
 
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-lang {
+    background: rgba(0, 180, 216, 0.1);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+
+.btn-lang:hover {
+    background: rgba(0, 180, 216, 0.1);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.lang-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--white);
+    min-width: 120px;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    z-index: 1000;
+    overflow: hidden;
+    margin-top: 5px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.lang-menu.show {
+    display: block;
+}
+
+.lang-menu a {
+    color: var(--darker);
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.lang-menu a:hover {
+    background: rgba(0, 180, 216, 0.1);
+    color: var(--primary);
+}
+
+html[dir="ltr"] .lang-menu {
+    right: auto;
+    left: 0;
+}
+
 .btn-phone {
     display: flex;
     align-items: center;
