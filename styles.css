@@ -44,8 +44,7 @@ html.dark-mode .header,
 html.dark-mode .hero,
 html.dark-mode .footer,
 html.dark-mode .btn-phone,
-html.dark-mode .social-link,
-html.dark-mode .booking-form {
+html.dark-mode .social-link {
     --dark: #1a2634;
     --darker: #0d1b2a;
     --light: #f8f9fa;
