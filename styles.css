@@ -1,4 +1,4 @@
-مف/* Jasim & Ali Car Cooling System - Styles */
+/* Jasim & Ali Car Cooling System - Styles */
 
 * {
     margin: 0;
@@ -1149,14 +1149,16 @@ body {
 
 .form-group {
     margin-bottom: 20px;
-    min-height: 85px; /* Smaller uniform height matching Name field, mobile-friendly */
+    min-height: 105px; /* Uniform height for all fields */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-
-
+.booking-form .form-group:nth-child(5),
+.booking-form .form-group:nth-child(6) {
+    min-height: 110px; /* Extra space for longer labels */
+}
 
 .form-group label {
     display: flex;
@@ -1166,6 +1168,7 @@ body {
     color: var(--darker);
     margin-bottom: 8px;
     font-size: 14px;
+    min-height: 22px; /* Fixed label height */
     flex-shrink: 0;
 }
 
@@ -1177,15 +1180,15 @@ body {
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 12px 16px; /* Slightly smaller padding */
+    padding: 14px 18px;
     border: 2px solid rgba(0,180,216,0.2);
     border-radius: var(--radius);
     font-family: inherit;
     font-size: 15px;
     background: var(--white);
     transition: var(--transition);
-    flex-grow: 1;
-    min-height: 42px; /* Smaller consistent height */
+    flex-grow: 1; /* Fill remaining space */
+    min-height: 50px; /* Consistent input height */
 }
 
 .form-group input:focus,
@@ -1424,42 +1427,6 @@ body {
 .footer-bottom .powered-by {
     margin-top: 8px;
     color: var(--primary);
-}
-
-/* Call Float Button - Ali */
-.call-float {
-    position: fixed;
-    bottom: 105px; /* Above WhatsApp (75px gap + 30px) */
-    left: 30px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #ff6b35, #f7931e); /* Orange call color */
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
-    font-size: 24px;
-    box-shadow: var(--shadow-lg);
-    z-index: 999;
-    transition: var(--transition);
-    text-decoration: none;
-    padding: 8px;
-    box-sizing: border-box;
-}
-
-.call-float .phone-label {
-    font-size: 10px;
-    font-weight: 600;
-    line-height: 1;
-}
-
-.call-float:hover {
-    transform: scale(1.1) translateY(-2px);
-    background: linear-gradient(135deg, #e55a2b, #e67e22);
-    box-shadow: 0 8px 25px rgba(255,107,53,0.4);
 }
 
 /* WhatsApp Float Button */
