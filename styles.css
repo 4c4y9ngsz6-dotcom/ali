@@ -1432,7 +1432,6 @@ body {
 /* WhatsApp Float Button */
 .whatsapp-float {
     position: fixed;
-    bottom: 30px;
     left: 30px;
     width: 60px;
     height: 60px;
@@ -1447,6 +1446,14 @@ body {
     z-index: 999;
     transition: var(--transition);
     text-decoration: none;
+}
+
+.whatsapp-float-1 {
+    bottom: 30px;
+}
+
+.whatsapp-float-2 {
+    bottom: 100px;
 }
 
 .whatsapp-float:hover {
